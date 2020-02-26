@@ -14,7 +14,7 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(100) NOT NULL,
 );
-CREATE TABLE user-order (
+CREATE TABLE user_order (
   id SERIAL PRIMARY KEY NOT NULL,
   users_id FOREIGN KEY(users.id),
   orders_id FOREIGN KEY(orders.id),
@@ -22,7 +22,7 @@ CREATE TABLE user-order (
   size VARCHAR(100),
   suger VARCHAR(100),
   time_of_order TIMESTAMP , 
-  total-price INTEGER,
+  total_price INTEGER,
 );
 
 COMMIT;
