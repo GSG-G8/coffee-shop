@@ -1,0 +1,31 @@
+{
+  "name": "coffee-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G8/coffee-shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G8/coffee-shop/issues"
+  },
+  "homepage": "https://github.com/GSG-G8/coffee-shop#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "pg": "^7.18.2"
+  }
+}
