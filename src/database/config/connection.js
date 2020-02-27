@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === 'production') {
   // dburl = process.env.Prod_URL;
 } else if (process.env.NODE_ENV === 'test') {
   // dbUrl = process.env.TEST_DB_URL;
-} else {
+} else if (process.env.NODE_ENV === 'development') {
   dbUrl = process.env.DEV_URL;
 }
 if (!dbUrl) throw new Error('No DB URL found !!!');
