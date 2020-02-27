@@ -8,23 +8,23 @@ const price = document.querySelector('.price');
 const TotalPrice = document.querySelector('.Total_price');
 const detailsButton = document.querySelector('.details__button');
 const quantityRange = document.getElementById('quantityRange');
+const totalPrice = document.getElementById('totalPrice');
 quantityDisplay.textContent = quantityRange.value;
 
 quantityRange.addEventListener('mousemove', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
+  totalPrice.value = totalPrice.textContent;
 });
 quantityRange.addEventListener('touchmove', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
+  totalPrice.value = totalPrice.textContent;
 });
 quantityRange.addEventListener('touchstart', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
-});
-
-detailsButton.addEventListener('click', () => {
-  details_ord();
+  totalPrice.value = totalPrice.textContent;
 });
 
 
