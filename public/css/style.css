@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgb(77, 60, 39);
+  justify-content: space-between;
+  padding: 3px;
+}
+.header__your-order {
+  width: 60px;
+  height: 60px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.content__menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 50px;
+}
+.menu__order,
+.orders__order {
+  display: flex;
+  flex-flow: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  margin: 20px;
+}
+.order__image {
+  width: 300px;
+  height: 300px;
+}
+.order__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0 10px 0;
+}
+.order__name {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 5px;
+}
+.order__price,
+.order__quantity,
+.details__quantity,
+.name,
+.order__size {
+  font-size: 20px;
+  font-weight: bold;
+}
+.order__details {
+  font-size: 15px;
+  font-family: monospace;
+  padding: 10px;
+}
+.order__time {
+  margin: 10px;
+}
+.orders {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 50px;
+}
+.order-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
+}
+.orders__back {
+  position: absolute;
+  top: 13%;
+  left: 3%;
+  cursor: pointer;
+  display: none;
+}
+/* details */
+.details {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.details__image {
+  width: 250px;
+  height: 250px;
+}
+.details__sub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30%;
+  margin: 10px;
+}
+.details__select {
+  outline: none;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+}
+.details__button {
+  border-radius: 50px;
+  border: 1px solid black;
+  font-size: 25px;
+  outline: none;
+  cursor: pointer;
+  margin: 10px;
+  background-color: #b08162;
+  padding: 8px;
+}
+@media (max-width: 700px) {
+  .details__sub {
+    width: 80%;
+  }
+}

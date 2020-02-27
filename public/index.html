@@ -9,45 +9,125 @@
   <body>
     <header class="header">
       <img src="./images/logo.png" alt="logo coffe shop" class="header__logo" />
-      <img src="./images/your_order.png" alt="" class="header__your-order" />
+      <img
+        src="./images/your_ord.png"
+        alt="my order"
+        class="header__your-order"
+      />
     </header>
-    <section class="content">
-        <section class="content__menu">
-            <article class="menu__order">
-                <img src="./images/coffee.png" alt="coffee" class="order__image">
-                <span class="order__name">coffee</span>
-            </article>
-            <article class="menu__order">
-                <img src="./images/coffee.png" alt="coffee" class="order__image">
-                <span class="order__name">coffee</span>
-            </article>
-            <article class="menu__order">
-                <img src="./images/coffee.png" alt="coffee" class="order__image">
-                <span class="order__name">coffee</span>
-            </article>
-            <article class="menu__order">
-                <img src="./images/coffee.png" alt="coffee" class="order__image">
-                <span class="order__name">coffee</span>
-            </article>
-            <article class="menu__order">
-                <img src="./images/coffee.png" alt="coffee" class="order__image">
-                <span class="order__name">coffee</span>
-            </article>
-            <article class="menu__order">
-                <img src="./images/coffee.png" alt="coffee" class="order__image">
-                <span class="order__name">coffee</span>
-            </article>
-        </section>
+    <section class="content__menu">
+      <article class="menu__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <div class="order__content">
+          <span class="order__name">coffee</span>
+          <span class="order__price">2$</span>
+        </div>
+        <span class="order__details">best coffee withe creama </span>
+      </article>
+      <article class="menu__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <div class="order__content">
+          <span class="order__name">coffee</span>
+          <span class="order__price">2$</span>
+        </div>
+        <span class="order__details">best coffee withe creama </span>
+      </article>
+      <article class="menu__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <div class="order__content">
+          <span class="order__name">coffee</span>
+          <span class="order__price">2$</span>
+        </div>
+        <span class="order__details">best coffee withe creama </span>
+      </article>
+      <article class="menu__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <div class="order__content">
+          <span class="order__name">coffee</span>
+          <span class="order__price">2$</span>
+        </div>
+        <span class="order__details">best coffee withe creama </span>
+      </article>
+      <article class="menu__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <div class="order__content">
+          <span class="order__name">coffee</span>
+          <span class="order__price">2$</span>
+        </div>
+        <span class="order__details">best coffee withe creama </span>
+      </article>
+      <article class="menu__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <div class="order__content">
+          <span class="order__name">coffee</span>
+          <span class="order__price">2$</span>
+        </div>
+        <span class="order__details">best coffee withe creama </span>
+      </article>
     </section>
+    <img src="./images/cancle.png" alt="back to home" class="orders__back" />
     <section class="orders">
-        <article class="orders__order">
-            <img src="./images/coffee.png" alt="coffee" class="order__image">
-            <span class="order__name">coffee</span>
-            <span class="order__price">20$</span>
-            <span class="order__quantity">3</span>
-            <span class="order__size">big</span>
-            <span class="order__time">10/5/2018 -- 5:20pm</span>
-        </article>
+      <article class="orders__order">
+        <img src="./images/coffee.png" alt="coffee" class="order__image" />
+        <span class="order__name">coffee</span>
+        <div class="order-content">
+          <span class="order__price">20$</span>
+          <span class="order__quantity">3</span>
+          <span class="order__size">big</span>
+        </div>
+        <span class="order__time">10/5/2018 -- 5:20pm</span>
+      </article>
     </section>
+    <section class="details">
+      <img src="./images/coffee.png" alt="coffee" class="details__image" />
+      <span class="details__name">Caffee</span>
+      <div class="prices details__sub">
+        <span class="name">price : </span>
+        <div>
+          <span class="price name">2</span>
+          <span class="name">$</span>
+        </div>
+      </div>
+      <div class="quantity details__sub">
+        <span class="name">quantity : </span>
+        <div>
+          <span class="details__quantity"></span>
+          <input
+          type="range"
+          name="quantity"
+          id="quantityRange"
+          min="1"
+            max="10"
+          value="1"
+          />
+        </div>
+      </div>
+      <div class="size details__sub">
+        <span class="name">size : </span>
+        <select name="size" id="size" class="details__select">
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+        </select>
+      </div>
+      <div class="sugar details__sub">
+        <span class="name">sugar : </span>
+        <select name="sugar" id="sugar" class="details__select">
+          <option value="without">Without</option>
+          <option value="little">Little</option>
+          <option value="medium">Medium</option>
+          <option value="lot">Lot</option>
+        </select>
+      </div>
+      <div class="prices details__sub">
+        <span class="name">Total price : </span>
+        <div>
+          <span class="Total_price name">10</span>
+          <span class="name">$</span>
+        </div>
+      </div>
+      <button class="details__button">send</button>
+    </section>
+    <script src="./script/dom.js"></script>
   </body>
 </html>
