@@ -1,5 +1,6 @@
 const dbConnection = require('../config/connection');
 
-const getData = () => dbConnection.query('select * from menu');
+const getMenu = () => dbConnection.query('select * from menu');
+const getOrder = () => dbConnection.query('select * from menu inner join orders on menu.id = orders.menuId');
 
-module.exports = { getData };
+module.exports = { getMenu, getOrder };

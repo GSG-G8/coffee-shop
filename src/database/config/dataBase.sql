@@ -23,7 +23,7 @@ CREATE TABLE orders (
   time_of_order TIMESTAMP , 
   total_price INTEGER
 );
-INSERT INTO orders (menuId,quantity,size,suger,time_of_order,total_price) VALUES (1,3,'small','one',null,24);
-INSERT INTO orders (menuId,quantity,size,suger,time_of_order,total_price) VALUES (2,2,'small','one',null,10);
+INSERT INTO orders (menuId,quantity,size,suger,time_of_order,total_price) VALUES (1,3,'small','one','null',24);
+INSERT INTO orders (menuId,quantity,size,suger,time_of_order,total_price) VALUES (2,2,'small','one','null',10);
 
 COMMIT;
