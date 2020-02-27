@@ -65,3 +65,12 @@ document.addEventListener('click', (e) => {
     backToHomeBtn.style.display = 'block';
   }
 });
+
+const creatMenu = (data) => {
+  data.forEach((e) => {
+});
+};
+const createOrder = (data) => {
+  data.forEach((e) => {
+});
+};
