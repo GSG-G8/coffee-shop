@@ -6,11 +6,11 @@ const { getMenu } = require('../database/queries/getData');
 
 // router.use('/', home);
 router.get('/menu', (req, res) => {
-  getMenu().then((resu) => res.json(resu.rows))
+  getMenu().then((result) => res.json(result.rows))
     .catch((e) => console.log(`error >>> ${e}`));
 });
 router.get('/orders', (req, res) => {
-  getOrder().then((resu) => res.json(resu.rows))
+  getOrder().then((result) => res.json(result.rows))
     .catch((e) => console.log(`error >>> ${e}`));
 });
 module.exports = router;
