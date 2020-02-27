@@ -7,14 +7,7 @@ const quantityDisplay = document.querySelector('.details__quantity');
 const price = document.querySelector('.price');
 const TotalPrice = document.querySelector('.Total_price');
 const detailsButton = document.querySelector('.details__button');
-const detailsName = document.querySelector('.details__name');
 const quantityRange = document.getElementById('quantityRange');
-const size = document.getElementById('size');
-const sugar = document.getElementById('sugar');
-const date = new Date();
-const seconds = date.getSeconds();
-const minutes = date.getMinutes();
-const hour = date.getHours();
 quantityDisplay.textContent = quantityRange.value;
 
 quantityRange.addEventListener('mousemove', () => {
@@ -29,15 +22,7 @@ quantityRange.addEventListener('touchstart', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
 });
-const details_ord = () => {
-  console.log(detailsName.textContent);
-  console.log(price.textContent + '$');
-  console.log(quantityDisplay.textContent);
-  console.log(size.value);
-  console.log(sugar.value);
-  console.log(hour + ':' + minutes + ':'+ seconds);
-  console.log(TotalPrice.textContent + '$');
-};
+
 detailsButton.addEventListener('click', () => {
   details_ord();
 });
@@ -67,10 +52,65 @@ document.addEventListener('click', (e) => {
 });
 
 const creatMenu = (data) => {
+  content.textContent = '';
   data.forEach((e) => {
-});
+    const parentArical = document.createElement('article');
+    const parentImage = document.createElement('img');
+    const ParenDiv = document.createElement('div');
+    const divSpanName = document.createElement('span');
+    const divSpanPrice = document.createElement('span');
+    const parentSpan = document.createElement('span');
+
+    parentArical.className = 'menu__order';
+    parentImage.className = 'order__image';
+    parentImage.src = e.menuimage;
+    ParenDiv.className = 'order__content';
+    divSpanName.className = 'order__name';
+    divSpanName.textContent = e.menuname;
+    divSpanPrice.className = 'order__price';
+    divSpanPrice.textContent = `${e.price} $`;
+    parentSpan.className = 'order__details';
+    parentSpan.textContent = e.menudescription;
+
+    content.appendChild(parentArical);
+    parentArical.appendChild(parentImage);
+    parentArical.appendChild(ParenDiv);
+    ParenDiv.appendChild(divSpanName);
+    ParenDiv.appendChild(divSpanPrice);
+    parentArical.appendChild(parentSpan);
+  });
 };
+
 const createOrder = (data) => {
+  orders.textContent = '';
   data.forEach((e) => {
-});
+    const parentArical = document.createElement('article');
+    const parentImage = document.createElement('img');
+    const parenName = document.createElement('span');
+    const parenDiv = document.createElement('div');
+    const ordPrice = document.createElement('sapn');
+    const ordQuantity = document.createElement('sapn');
+    const ordSize = document.createElement('sapn');
+
+    parentArical.className = 'orders__order';
+    parentImage.className = 'order__image';
+    parentImage.src = e.menuimage;
+    parenName.className = 'order__name';
+    parenName.textContent = e.menuname;
+    parenDiv.className = 'order-content';
+    ordPrice.className = 'order__price';
+    ordPrice.textContent = `${e.total_price} $`;
+    ordQuantity.className = 'order__quantity';
+    ordQuantity.textContent = e.quantity;
+    ordSize.className = 'order__size';
+    ordSize.textContent = e.size;
+
+    orders.appendChild(parentArical);
+    parentArical.appendChild(parentImage);
+    parentArical.appendChild(parenName);
+    parentArical.appendChild(parenDiv);
+    parenDiv.appendChild(ordPrice);
+    parenDiv.appendChild(ordQuantity);
+    parenDiv.appendChild(ordSize);
+  });
 };
