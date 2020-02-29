@@ -3,7 +3,7 @@ require('env2')('./config.env');
 
 let dbUrl = '';
 if (process.env.NODE_ENV === 'production') {
-  // dburl = process.env.Prod_URL;
+  dburl = process.env.DATABASE_URL;
 } else if (process.env.NODE_ENV === 'test') {
   // dbUrl = process.env.TEST_DB_URL;
 } else if (process.env.NODE_ENV === 'development') {

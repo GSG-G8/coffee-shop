@@ -1,11 +1,9 @@
 const dbConnection = require('../config/connection');
 
 const postData = (data) => {
-  const {
-    quantity, size, sugar, totalPrice } = data;
   const sql = {
-    text: 'INSERT INTO orders (quantity, size, suger,total_price ) VALUES ($1, $2, $3,$4) RETURNING *;',
-    values: [quantity, size, sugar, totalPrice],
+    text: 'INSERT INTO orders (menuId, quantity, size, suger,total_price ) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+    values: [data.menuId, data.quantity, data.size, data.suger, data.total_price],
   };
   return dbConnection.query(sql);
 };
