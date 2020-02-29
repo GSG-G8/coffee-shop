@@ -6,15 +6,14 @@ const backToHomeBtn = document.querySelector('.orders__back');
 const quantityDisplay = document.querySelector('.details__quantity');
 const price = document.querySelector('.price');
 const TotalPrice = document.querySelector('.Total_price');
-const sendButton = document.querySelector('.details__button');
 const quantityRange = document.getElementById('quantityRange');
 const totalPriceForm = document.getElementById('totalPrice');
 const menuIdOrder = document.getElementById('menuId');
 const detailsImage = document.querySelector('.details__image');
 const detailsName = document.querySelector('.details__name');
 const detailsPrice = document.querySelector('.price');
+
 quantityDisplay.textContent = quantityRange.value;
-totalPriceForm.value = TotalPrice.textContent;
 
 quantityRange.addEventListener('mousemove', () => {
   quantityDisplay.textContent = quantityRange.value;
@@ -52,7 +51,7 @@ document.addEventListener('click', (e) => {
     details.style.display = 'flex';
     backToHomeBtn.style.display = 'block';
     const finalData = theResult[e.target.menuId - 1];
-    menuIdOrder.value = e.target.menuId; // to send in body
+    menuIdOrder.value = e.target.menuId;
     detailsImage.src = finalData.menuimage;
     detailsName.textContent = finalData.menuname;
     detailsPrice.textContent = finalData.price;
