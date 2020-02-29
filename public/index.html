@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,21 +9,34 @@
   </head>
   <body>
     <header class="header">
-      <img src="./images/logo.png" alt="logo coffe shop" class="header__logo" />
-      <img
-        src="./images/your_ord.png"
-        alt="my order"
-        class="header__your-order"
-      />
+      <div class="container">
+
+        <nav >
+          <ul class="header__nav__menu">
+            <li><img
+              src="./images/logo.png"
+              alt="my order"
+              class="header__your-order"
+            /></li>
+          </ul>
+        </nav>
+        <div class="header__title">
+        <h1 >Coffee Makes You Love</h1>
+        <p>A Lot Can Happen Over Coffee,Its Awesome!!!  </p>
+        </div>
+
+    </div>
     </header>
+    <div class="container">
     <section class="content__menu">
     </section>
     <img src="./images/cancle.png" alt="back to home" class="orders__back" />
     <section class="orders">
+      <h2 class="orders__name">your orders</h2>
     </section>
     <form class="details" method="POST" action="/order">
-      <img src="./images/coffee.png" alt="coffee" class="details__image" />
-      <span class="details__name">Caffee</span>
+      <img src="" class="details__image" />
+      <span class="details__name">Coffee</span>
       <div class="prices details__sub">
         <span class="name">price : </span>
         <div>
@@ -54,7 +68,7 @@
       </div>
       <div class="sugar details__sub">
         <span class="name">sugar : </span>
-        <select name="sugar" id="sugar" class="details__select">
+        <select name="suger" id="sugar" class="details__select">
           <option value="without">Without</option>
           <option value="little">Little</option>
           <option value="medium">Medium</option>
@@ -63,14 +77,17 @@
       </div>
       <div class="prices details__sub">
         <span class="name">Total price : </span>
-        <input type="hidden" name="totalPrice" id="totalPrice" />
+        <input type="hidden" name="total_price" id="totalPrice" />
+        <input type="hidden" name="menuId" id="menuId" />
         <div>
-          <span class="Total_price name">10</span>
+          <span class="Total_price name"></span>
           <span class="name">$</span>
         </div>
       </div>
       <button type="submit" class="details__button">send</button>
     </form>
+  </div>
+</main>
     <script src="./script/dom.js"></script>
     <script src="./script/logic.js"></script>
   </body>

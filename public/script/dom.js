@@ -6,34 +6,31 @@ const backToHomeBtn = document.querySelector('.orders__back');
 const quantityDisplay = document.querySelector('.details__quantity');
 const price = document.querySelector('.price');
 const TotalPrice = document.querySelector('.Total_price');
-const detailsButton = document.querySelector('.details__button');
+const sendButton = document.querySelector('.details__button');
 const quantityRange = document.getElementById('quantityRange');
-const totalPrice = document.getElementById('totalPrice');
+const totalPriceForm = document.getElementById('totalPrice');
+const menuIdOrder = document.getElementById('menuId');
+const detailsImage = document.querySelector('.details__image');
+const detailsName = document.querySelector('.details__name');
+const detailsPrice = document.querySelector('.price');
 quantityDisplay.textContent = quantityRange.value;
+totalPriceForm.value = TotalPrice.textContent;
 
 quantityRange.addEventListener('mousemove', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
-  totalPrice.value = totalPrice.textContent;
+  totalPriceForm.value = TotalPrice.textContent;
 });
 quantityRange.addEventListener('touchmove', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
-  totalPrice.value = totalPrice.textContent;
+  totalPriceForm.value = TotalPrice.textContent;
 });
 quantityRange.addEventListener('touchstart', () => {
   quantityDisplay.textContent = quantityRange.value;
   TotalPrice.textContent = price.textContent * quantityRange.value;
-  totalPrice.value = totalPrice.textContent;
+  totalPriceForm.value = TotalPrice.textContent;
 });
-
-
-myOrdersBtn.onclick = () => {
-  content.style.display = 'none';
-  orders.style.display = 'flex';
-  details.style.display = 'none';
-  backToHomeBtn.style.display = 'block';
-};
 
 backToHomeBtn.onclick = () => {
   content.style.display = 'flex';
@@ -41,15 +38,27 @@ backToHomeBtn.onclick = () => {
   details.style.display = 'none';
   backToHomeBtn.style.display = 'none';
 };
-
+myOrdersBtn.onclick = () => {
+  content.style.display = 'none';
+  orders.style.display = 'flex';
+  details.style.display = 'none';
+  backToHomeBtn.style.display = 'block';
+};
+let theResult;
 document.addEventListener('click', (e) => {
-  if (e.target.alt === 'coffee') {
+  if (e.target.image === 'coffee') {
     content.style.display = 'none';
     orders.style.display = 'none';
     details.style.display = 'flex';
     backToHomeBtn.style.display = 'block';
+    const finalData = theResult[e.target.menuId - 1];
+    menuIdOrder.value = e.target.menuId; // to send in body
+    detailsImage.src = finalData.menuimage;
+    detailsName.textContent = finalData.menuname;
+    detailsPrice.textContent = finalData.price;
   }
 });
+
 
 const creatMenu = (data) => {
   content.textContent = '';
@@ -64,6 +73,9 @@ const creatMenu = (data) => {
     parentArical.className = 'menu__order';
     parentImage.className = 'order__image';
     parentImage.src = e.menuimage;
+    parentImage.menuId = e.id;
+    parentImage.image = 'coffee';
+    parentImage.alt = e.menuname;
     ParenDiv.className = 'order__content';
     divSpanName.className = 'order__name';
     divSpanName.textContent = e.menuname;
@@ -82,7 +94,7 @@ const creatMenu = (data) => {
 };
 
 const createOrder = (data) => {
-  orders.textContent = '';
+  // orders.textContent = '';
   data.forEach((e) => {
     const parentArical = document.createElement('article');
     const parentImage = document.createElement('img');
@@ -91,6 +103,7 @@ const createOrder = (data) => {
     const ordPrice = document.createElement('sapn');
     const ordQuantity = document.createElement('sapn');
     const ordSize = document.createElement('sapn');
+    const ordSuagr = document.createElement('sapn');
 
     parentArical.className = 'orders__order';
     parentImage.className = 'order__image';
@@ -104,6 +117,8 @@ const createOrder = (data) => {
     ordQuantity.textContent = e.quantity;
     ordSize.className = 'order__size';
     ordSize.textContent = e.size;
+    ordSuagr.className = 'order__size';
+    ordSuagr.textContent = `${e.suger} -Sugar`;
 
     orders.appendChild(parentArical);
     parentArical.appendChild(parentImage);
@@ -112,5 +127,6 @@ const createOrder = (data) => {
     parenDiv.appendChild(ordPrice);
     parenDiv.appendChild(ordQuantity);
     parenDiv.appendChild(ordSize);
+    parenDiv.appendChild(ordSuagr);
   });
 };
