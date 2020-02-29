@@ -1,5 +1,3 @@
-const home = (req, res) => {
-  res.send('home page');
-};
+const { clientErr, serverErr } = require('./error');
 
-module.exports = { home };
+module.exports = { clientErr, serverErr };
